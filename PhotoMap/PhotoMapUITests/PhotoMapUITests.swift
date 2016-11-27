@@ -28,8 +28,13 @@ class PhotoMapUITests: XCTestCase {
         super.tearDown()
     }
     
+    
     func testExample() {
-        // Use recording to get started writing UI tests.
+        XCUIDevice.shared().orientation = .portrait
+        let app = XCUIApplication()
+        app.buttons["Take Photo"].tap()
+        app.buttons["PhotoCapture"].tap()
+        app.buttons["Use Photo"].tap()
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     

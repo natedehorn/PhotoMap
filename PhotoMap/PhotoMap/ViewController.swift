@@ -16,9 +16,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     /**
     Function called when "Take Photo" button is pressed
     */
-    @IBAction func takePhoto(_ sender: Any) {
+    /*@IBAction func takePhoto(_ sender: Any) {
         imagepickersetup(source: .camera)
-    }
+    }*/
     
     /**
      Function called when "Photo Library" button is pressed
@@ -40,13 +40,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     Loads the photo selected into the app home screen
     */
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        print("image picker controller invoked")
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.contentMode = .scaleAspectFit
+            imageView.image = pickedImage
+        }
         self.dismiss(animated: true, completion: nil)
-        let url = info[UIImagePickerControllerReferenceURL] as! NSURL
-        let fetchResult = PHAsset.fetchAssets(withALAssetURLs: [url as URL], options: nil)
-        let asset = fetchResult.firstObject
-        print("Latitude: \(asset!.location!.coordinate.latitude)")
-        print("Longitude: \(asset!.location!.coordinate.longitude)")
+        if picker.sourceType == UIImagePickerControllerSourceType.photoLibrary {
+            let url = info[UIImagePickerControllerReferenceURL] as! NSURL
+            let fetchResult = PHAsset.fetchAssets(withALAssetURLs: [url as URL], options: nil)
+            let asset = fetchResult.firstObject
+            print("Latitude: \(asset!.location!.coordinate.latitude)")
+            print("Longitude: \(asset!.location!.coordinate.longitude)")
+        }
+        if picker.sourceType == UIImagePickerControllerSourceType.camera {
+            //When camera is used to upload photo
+        }
+        
+        
     }
     
     /**

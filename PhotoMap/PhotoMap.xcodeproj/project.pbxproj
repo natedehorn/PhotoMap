@@ -15,6 +15,7 @@
 		3C4C73DD1DE3DDF8005C5C43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4C73DB1DE3DDF8005C5C43 /* LaunchScreen.storyboard */; };
 		3C4C73E81DE3DDF8005C5C43 /* PhotoMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4C73E71DE3DDF8005C5C43 /* PhotoMapTests.swift */; };
 		3C4C73F31DE3DDF8005C5C43 /* PhotoMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4C73F21DE3DDF8005C5C43 /* PhotoMapUITests.swift */; };
+		3C68CFC51DED0FE200836E33 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C68CFC41DED0FE200836E33 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3C4C73EE1DE3DDF8005C5C43 /* PhotoMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C4C73F21DE3DDF8005C5C43 /* PhotoMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMapUITests.swift; sourceTree = "<group>"; };
 		3C4C73F41DE3DDF8005C5C43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C68CFC41DED0FE200836E33 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C68CFC51DED0FE200836E33 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +86,7 @@
 				3C4C73E61DE3DDF8005C5C43 /* PhotoMapTests */,
 				3C4C73F11DE3DDF8005C5C43 /* PhotoMapUITests */,
 				3C4C73CD1DE3DDF8005C5C43 /* Products */,
+				3C68CFC31DED0FE200836E33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +130,14 @@
 				3C4C73F41DE3DDF8005C5C43 /* Info.plist */,
 			);
 			path = PhotoMapUITests;
+			sourceTree = "<group>";
+		};
+		3C68CFC31DED0FE200836E33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C68CFC41DED0FE200836E33 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +210,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = NSS4B9974F;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3C4C73E21DE3DDF8005C5C43 = {
 						CreatedOnToolsVersion = 8.1;
@@ -516,6 +533,7 @@
 				3C4C73F91DE3DDF8005C5C43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C4C73FA1DE3DDF8005C5C43 /* Build configuration list for PBXNativeTarget "PhotoMapTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +542,7 @@
 				3C4C73FC1DE3DDF8005C5C43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C4C73FD1DE3DDF8005C5C43 /* Build configuration list for PBXNativeTarget "PhotoMapUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +551,7 @@
 				3C4C73FF1DE3DDF8005C5C43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
